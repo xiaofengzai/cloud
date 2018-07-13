@@ -1,1 +1,4 @@
-https://blog.csdn.net/forezp/article/details/69696915
+https://blog.csdn.net/forezp/article/details/70148833
+
+
+clean compile install

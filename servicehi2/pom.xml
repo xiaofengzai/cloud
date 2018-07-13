@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.forezp</groupId>
-    <artifactId>service-hi</artifactId>
+    <artifactId>service-hi2</artifactId>
     <version>1.0-sh</version>
     <packaging>jar</packaging>
 
-    <name>service-hi</name>
+    <name>service-hi2</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -55,7 +55,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>service-hi</finalName>
+        <finalName>service-hi2</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
