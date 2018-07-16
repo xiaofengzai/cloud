@@ -5,7 +5,7 @@
 
     <groupId>com.wen</groupId>
     <artifactId>spring-cloud</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>cloud-v1</version>
     <packaging>pom</packaging>
 
     <name>spring-cloud</name>
@@ -19,11 +19,12 @@
     </parent>
 
     <modules>
-        <module>eureka-server</module>
-        <module>service-hi</module>
-        <module>service-ribbon</module>
-        <module>service-feign</module>
-        <module>service-zuul</module>
+        <module>eurekaserver</module>
+        <module>servicehi</module>
+        <module>servicehi2</module>
+        <module>serviceribbon</module>
+        <module>servicefeign</module>
+        <module>servicezuul</module>
     </modules>
 
 
@@ -35,6 +36,10 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -54,6 +59,8 @@
         </dependencies>
     </dependencyManagement>
 
+
+
     <build>
         <plugins>
             <plugin>
@@ -62,5 +69,16 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>

@@ -5,11 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wen</groupId>
-    <artifactId>service-hi</artifactId>
+    <artifactId>service-zuul</artifactId>
     <version>1.0-sh</version>
+
     <packaging>jar</packaging>
 
-    <name>service-hi</name>
+    <name>service-zuul</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -18,16 +19,27 @@
         <version>cloud-v1</version>
     </parent>
 
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <version>1.4.5.RELEASE</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-netflix-zuul</artifactId>-->
+            <!--<version>1.4.5.RELEASE</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zuul</artifactId>
         </dependency>
     </dependencies>
 
+
     <build>
-        <finalName>service-hi</finalName>
+        <finalName>service-zuul</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
