@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wen</groupId>
-    <artifactId>eurekaserver</artifactId>
+    <artifactId>service-eureka</artifactId>
     <version>1.0-sh</version>
 
     <packaging>jar</packaging>
-    <name>eurekaserver</name>
+    <name>service-eureka</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
