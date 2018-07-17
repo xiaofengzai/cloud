@@ -7,6 +7,12 @@ server:
 spring:
   application:
     name: service-zuul
+spring:
+  cloud:
+        config:
+                label: master
+                profile: dev
+                uri: http://localhost:8770/
 zuul:
   routes:
     api-a:

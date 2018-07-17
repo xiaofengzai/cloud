@@ -32,7 +32,7 @@
 
 
     <build>
-        <finalName>eurekaserver</finalName>
+        <finalName>service-eureka</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

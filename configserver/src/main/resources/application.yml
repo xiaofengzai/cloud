@@ -1,5 +1,9 @@
 server:
   port: 8770
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 spring:
   application:
     name: config-server
@@ -7,6 +11,8 @@ spring:
         config:
                 server:
                         git:
-                            uri: https://github.com/forezp/SpringcloudConfig/
-                            searchPaths : respo
+                            uri: https://github.com/xiaofengzai/cloud
+                            searchPaths : configs
+                            username: xiaofengzai
+                            password: Wait@4u.
         label: master
