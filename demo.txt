@@ -1,4 +1,5 @@
 https://blog.csdn.net/forezp/article/details/70148833
+https://gitee.com/battcn/battcn-cloud.git
 
 
 clean compile install
