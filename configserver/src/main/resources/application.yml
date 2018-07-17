@@ -14,5 +14,5 @@ spring:
                             uri: https://github.com/xiaofengzai/cloud
                             searchPaths : configs
                             username: xiaofengzai
-                            password: Wait@4u.
+                            password: #######
         label: master
