@@ -1,8 +1,10 @@
 package com.wen.security.auth.login;
 
 import com.alibaba.fastjson.JSON;
-import com.wen.pojo.UserInfo;
-import com.wen.pojo.UserRole;
+import com.wen.model.RoleTypeEnum;
+import com.wen.model.core.Role;
+import com.wen.model.core.User;
+import com.wen.myeunm.EnumUtils;
 import com.wen.security.model.UserContext;
 import com.wen.service.UserInfoService;
 import com.wen.service.UserRoleService;
@@ -55,16 +57,16 @@ public class LoginAuthenticationProvider implements AuthenticationProvider {
         logger.debug("[authentication info] - [{}]", JSON.toJSONString(authentication));
         String username = (String) authentication.getPrincipal();
         String password = (String) authentication.getCredentials();
-        UserInfo user = userService.findByName(username);
+        User user = userService.findByName(username);
         if(user == null) throw new UsernameNotFoundException("User not found: " + username);
-        if (!user.getPassword().equals(password)) {
+        if (!encoder.matches(password,user.getPassword())) {
             throw new BadCredentialsException("Authentication Failed. Username or Password not valid.");
         }
-        List<UserRole> roles = roleService.getRoleByUser(user);
+        List<Role> roles = roleService.getRolesByUsername(username);
         if (roles == null || roles.size() <= 0) throw new InsufficientAuthenticationException("User has no roles assigned");
         
         List<GrantedAuthority> authorities = roles.stream()
-                .map(authority -> new SimpleGrantedAuthority(authority.authority()))
+                .map(role -> new SimpleGrantedAuthority(EnumUtils.getDisplayName(role.getRoleType(), RoleTypeEnum.class)))
                 .collect(Collectors.toList());
         
         UserContext userContext = UserContext.create(user.getUserName(), authorities);

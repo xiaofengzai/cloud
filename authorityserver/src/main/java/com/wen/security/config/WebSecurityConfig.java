@@ -1,7 +1,7 @@
 package com.wen.security.config;
 
 
-import com.wen.pojo.enums.RoleEnum;
+import com.wen.model.RoleTypeEnum;
 import com.wen.security.RestAuthenticationEntryPoint;
 import com.wen.security.auth.login.LoginAuthenticationProvider;
 import com.wen.security.auth.login.LoginProcessingFilter;
@@ -32,6 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     public static final String TOKEN_HEADER_PARAM = "X-Authorization";
     private static final String FORM_BASED_LOGIN_ENTRY_POINT = "/api/auth/login";
+    private static final String FORM_BASED_REGISTER_ENTRY_POINT = "/register";
     private static final String TOKEN_BASED_AUTH_ENTRY_POINT = "/api/**";
     private static final String MANAGE_TOKEN_BASED_AUTH_ENTRY_POINT = "/manage/**";
     private static final String TOKEN_REFRESH_ENTRY_POINT = "/api/auth/refresh_token";
@@ -90,12 +91,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers(FORM_BASED_LOGIN_ENTRY_POINT).permitAll() // Login end-point
+                .antMatchers(FORM_BASED_LOGIN_ENTRY_POINT,FORM_BASED_REGISTER_ENTRY_POINT).permitAll() // Login end-point
                 .antMatchers(TOKEN_REFRESH_ENTRY_POINT).permitAll() // Token refresh end-point
                 .and()
                 .authorizeRequests()
                 .antMatchers(TOKEN_BASED_AUTH_ENTRY_POINT).authenticated() // Protected API End-points
-                .antMatchers(MANAGE_TOKEN_BASED_AUTH_ENTRY_POINT).hasAnyRole(RoleEnum.ADMIN.desc())
+                .antMatchers(MANAGE_TOKEN_BASED_AUTH_ENTRY_POINT).hasAnyRole(RoleTypeEnum.ADMIN.getDisplayName())
                 .and()
                 .addFilterBefore(buildLoginProcessingFilter(), UsernamePasswordAuthenticationFilter.class)
                 .addFilterBefore(buildTokenAuthenticationProcessingFilter(), UsernamePasswordAuthenticationFilter.class);

@@ -1,8 +1,10 @@
 package com.wen.service;
 
 
-import com.wen.pojo.UserInfo;
-import com.wen.pojo.UserRole;
+import com.wen.model.core.QUserRole;
+import com.wen.model.core.Role;
+import com.wen.repository.UserRoleRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -11,12 +13,10 @@ import java.util.List;
 
 @Service
 public class UserRoleService {
-
-    public List<UserRole> getRoleByUser(UserInfo user) {
-        if ("test".equals(user.getUserName())) {
-            //@see ExpressionUrlAuthorizationConfigurer  private static String hasAnyRole(String... authorities) 带 ROLE_
-            return Arrays.asList(new UserRole("ROLE_ADMIN"));
-        }
-        return null;
+    @Autowired
+    private UserRoleRepository userRoleRepository;
+    private final QUserRole qUserRole= QUserRole.userRole;
+    public List<Role> getRolesByUsername(String username) {
+        return userRoleRepository.findUserRolesByUsername(username);
     }
 }

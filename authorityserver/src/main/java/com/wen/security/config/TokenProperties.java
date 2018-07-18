@@ -2,15 +2,17 @@ package com.wen.security.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Levin
  */
 @Configuration
 @ConfigurationProperties(prefix = "battcn.security.token")
+@Component
 public class TokenProperties {
     /**
-     * {@link com.battcn.security.model.token.Token} token的过期时间
+     * {@link com.wen.security.model.token.Token} token的过期时间
      */
     private Integer expirationTime;
 
@@ -20,12 +22,12 @@ public class TokenProperties {
     private String issuer;
 
     /**
-     * 使用的签名KEY {@link com.battcn.security.model.token.Token}.
+     * 使用的签名KEY {@link com.wen.security.model.token.Token}.
      */
     private String signingKey;
 
     /**
-     * {@link com.battcn.security.model.token.Token} 刷新过期时间
+     * {@link com.wen.security.model.token.Token} 刷新过期时间
      */
     private Integer refreshExpTime;
 
