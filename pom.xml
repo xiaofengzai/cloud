@@ -26,6 +26,8 @@
         <module>servicefeign</module>
         <module>servicezuul</module>
 		<module>configserver</module>
+        <module>authorityserver</module>
+        <module>cloudcom</module>
     </modules>
 
 
