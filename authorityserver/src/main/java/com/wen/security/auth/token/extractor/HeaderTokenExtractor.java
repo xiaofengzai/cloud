@@ -12,7 +12,7 @@ import org.springframework.util.StringUtils;
 @Component
 public class HeaderTokenExtractor implements TokenExtractor {
 
-    public static String HEADER_PREFIX = "Bearer ";
+    private static String HEADER_PREFIX = "Bearer ";
 
     @Override
     public String extract(String header) {

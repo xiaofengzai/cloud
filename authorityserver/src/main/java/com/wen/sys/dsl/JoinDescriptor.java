@@ -57,7 +57,8 @@ public class JoinDescriptor {
                 case InnerJoin:
                     if(joinInfo.alias == null){
                         query.innerJoin(joinInfo.path);
-                    }else {
+                    }
+                    else {
                         query.innerJoin(joinInfo.path,joinInfo.alias);
                     }
                     query.fetchJoin();
@@ -65,7 +66,8 @@ public class JoinDescriptor {
                 case LeftJoin:
                     if(joinInfo.alias == null){
                         query.leftJoin(joinInfo.path);
-                    }else {
+                    }
+                    else {
                         query.leftJoin(joinInfo.path,joinInfo.alias);
                     }
                     query.fetchJoin();
@@ -73,7 +75,8 @@ public class JoinDescriptor {
                 case RightJoin:
                     if(joinInfo.alias == null){
                         query.rightJoin(joinInfo.path);
-                    }else {
+                    }
+                    else {
                         query.rightJoin(joinInfo.path,joinInfo.alias);
                     }
                     query.fetchJoin();
@@ -81,11 +84,13 @@ public class JoinDescriptor {
                 case FullJoin:
                     if(joinInfo.alias == null){
                         query.join(joinInfo.path);
-                    }else {
+                    }
+                    else {
                         query.join(joinInfo.path,joinInfo.alias);
                     }
                     query.fetchJoin();
                     break;
+                default:
             }
         }
         return query;
@@ -96,13 +101,13 @@ public class JoinDescriptor {
         private JoinType joinType;
         private Path alias;
 
-        public JoinInfo(EntityPath path, JoinType joinType) {
+        JoinInfo(EntityPath path, JoinType joinType) {
             this.path = path;
             this.joinType = joinType;
             this.alias = null;
         }
 
-        public JoinInfo(EntityPath path, JoinType joinType, Path alias) {
+        JoinInfo(EntityPath path, JoinType joinType, Path alias) {
             this.path = path;
             this.joinType = joinType;
             this.alias = alias;

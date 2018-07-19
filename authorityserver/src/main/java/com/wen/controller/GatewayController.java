@@ -50,7 +50,8 @@ public class GatewayController {
     private final UserRoleService userRoleService;
 
     @Autowired
-    public GatewayController(TokenProperties tokenProperties, TokenVerifier tokenVerifier, TokenFactory tokenFactory, TokenExtractor tokenExtractor, UserInfoService userInfoService, UserRoleService userRoleService) {
+    public GatewayController(TokenProperties tokenProperties, TokenVerifier tokenVerifier, TokenFactory tokenFactory,
+                             TokenExtractor tokenExtractor, UserInfoService userInfoService, UserRoleService userRoleService) {
         this.tokenProperties = tokenProperties;
         this.tokenVerifier = tokenVerifier;
         this.tokenFactory = tokenFactory;

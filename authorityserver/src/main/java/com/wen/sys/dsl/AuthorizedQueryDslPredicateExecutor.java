@@ -121,7 +121,8 @@
 //        return findAll(q -> createQueryFactory.apply(q).where(getBaseFilter(enableStatusFilter)));
 //    }
 //
-//    default <V> Page<V> findAllAuthorized(Function<JPAQueryFactory, JPAQuery<V>> createQueryFactory, Pageable pageable, boolean enableStatusFilter) {
+//    default <V> Page<V> findAllAuthorized(Function<JPAQueryFactory, JPAQuery<V>> createQueryFactory, Pageable pageable, boolean enableStatusFilter)
+//     {
 //        return findAll(q -> createQueryFactory.apply(q).where(getBaseFilter(enableStatusFilter)), pageable);
 //    }
 //

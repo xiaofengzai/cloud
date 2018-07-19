@@ -36,8 +36,7 @@ import java.util.stream.Collectors;
  */
 @Component
 public class LoginAuthenticationProvider implements AuthenticationProvider {
-
-	private Logger logger = LoggerFactory.getLogger(LoginAuthenticationProvider.class);
+    private Logger logger = LoggerFactory.getLogger(LoginAuthenticationProvider.class);
 	
 	final BCryptPasswordEncoder encoder;
 	final UserInfoService userService;
