@@ -6,5 +6,5 @@ spring:
   cloud:
       config:
           label: master
-          profile: dev
+          profile: service-zuul
           uri: http://localhost:8770/
