@@ -50,4 +50,18 @@ ribbon：
     @EnableDiscoveryClient
     注册中心实例
     
+六、consul（服务注册与发现）
+    注册中心需安装consul包，支持多数据中心,demo使用本地单实例注册中心
+    [provider]
+    spring-cloud-starter-consul-discovery
+    spring-boot-starter-actuator
+    配置注册中心（见consulservice）
+    [provider]
+    spring-cloud-starter-consul-discovery
+    spring-boot-starter-actuator
+    spring-cloud-starter-openfeign
+    配置注册中心（见consul-consumer）
+    配置feign转发请求
+        
+    
 

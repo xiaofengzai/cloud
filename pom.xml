@@ -26,8 +26,8 @@
         <module>servicefeign</module>
         <module>servicezuul</module>
 		<module>configserver</module>
-        <module>authorityserver</module>
-        <module>cloudcom</module>
+        <!--<module>authorityserver</module>-->
+        <!--<module>cloudcom</module>-->
     </modules>
 
 
@@ -47,6 +47,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <!-- Swagger核心包 start -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.6.1</version>
         </dependency>
     </dependencies>
 

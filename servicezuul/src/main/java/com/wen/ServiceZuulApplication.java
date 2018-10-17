@@ -24,8 +24,8 @@ public class ServiceZuulApplication {
     }
 
     // 测试动态修改配置
-//    @GetMapping("test")
-//    public String test(){
-//        return test;
-//    }
+    @GetMapping("test")
+    public String test(){
+        return test;
+    }
 }

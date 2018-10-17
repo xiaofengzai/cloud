@@ -7,7 +7,11 @@ spring:
       config:
           label: master
           profile: dev
-          uri: http://localhost:8770/
+          #uri: http://localhost:8770/   (单个配置服务加指定服务地址即可，集群需discovery配置如下)
+          discovery:
+            enabled: true
+            serviceId: config-server
+
 management:
   endpoints:
     web:
