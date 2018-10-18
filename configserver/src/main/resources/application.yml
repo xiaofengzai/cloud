@@ -16,11 +16,11 @@ spring:
                             username: xiaofengzai
                             password: ****
         label: master
-#        activemq:
-#          host: 127.0.0.1
-#          port: 5672
-#          username: guest
-#          password: guest
+        activemq:
+          host: 127.0.0.1
+          port: 5672
+          username: guest
+          password: guest
 management:
   endpoints:
     web:

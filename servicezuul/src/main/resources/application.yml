@@ -7,6 +7,12 @@ server:
 spring:
   application:
     name: service-zuul
+  cloud:
+    activemq:
+              host: 127.0.0.1
+              port: 5672
+              username: guest
+              password: guest
 zuul:
   routes:
     api-a:
